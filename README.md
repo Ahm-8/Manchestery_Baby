@@ -29,19 +29,26 @@ To get started, follow these steps:
 2. **Build the Project:**
    If you're on Linux, open a terminal and navigate to the project directory. Run the following command to compile the program using `make`:
 
-3. **Run the Simulator:**
+   ```shell
+   make
+   ```
+
+
+4. **Run the Simulator:**
 The simulator takes a binary machine code file as input. To run the simulator, use the following command:
 
-./simulator sample_program.txt
+```shell
+./baby_simulator
+```
 
-
-This will execute the machine code in the file `sample_mc1.txt`, stepping through each instruction and displaying the state of the Baby's hardware.
+This will take in the machine code, for example in the file `sample_mc1.txt`, stepping through each instruction and displaying the state of the Baby's hardware.
 
 4. **Assemble an Assembly Program:**
 To convert an assembly program to binary machine code, use the assembler with the following command:
 
-./assembler sample_assembly.txt
-
+```shell
+./assembler_program
+```
 
 This will generate a binary file containing the corresponding machine code, which can be loaded and run on the simulator.
 
