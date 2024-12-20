@@ -1,13 +1,3 @@
-/**
- * TEAM 6:
- * 
- * Anas Saad (2510059)
- * Ahmid Omarzada (2527809)
- * Sayed Hashemi (2508673)
- * Ahmed Youssef (2507690)
- * Usama Bin Fakhar (2530869)
-*/
-
 #include "simulator.hpp"
 
 using namespace std;
@@ -38,6 +28,18 @@ string BabySimulator::dtob(int decimalNumber) {
     return reversedBinary.to_string();
 }
 
+// Helper function to trim leading and trailing spaces
+string BabySimulator::trim(const string& str) const {
+    size_t first = str.find_first_not_of(" \t\n\r");
+    size_t last = str.find_last_not_of(" \t\n\r");
+
+    if (first == string::npos || last == string::npos) {
+        return "";
+    }
+
+    return str.substr(first, (last - first + 1));
+}
+
 // reads from file
 vector<string> BabySimulator::loadFile(const string& filename) {
     vector<string> lines;
@@ -46,6 +48,7 @@ vector<string> BabySimulator::loadFile(const string& filename) {
     if (file.is_open()) {
         string line;
         while (getline(file, line)) {
+            line = trim(line); // Trim the line before validating
             if (!isValidMachineCodeLine(line)) {
                 cout << "Invalid machine code line format: " << line << endl;
                 file.close();
@@ -61,6 +64,7 @@ vector<string> BabySimulator::loadFile(const string& filename) {
 
     return lines;
 }
+
 
 bool BabySimulator::doesFileExist(const string& filename) const {
     std::ifstream file(filename);

@@ -1,13 +1,3 @@
-/**
- * TEAM 6:
- * 
- * Anas Saad (2510059)
- * Ahmid Omarzada (2527809)
- * Sayed Hashemi (2508673)
- * Ahmed Youssef (2507690)
- * Usama Bin Fakhar (2530869)
-*/
-
 #include "assembler.hpp"
 
 // removes all spaces from a line

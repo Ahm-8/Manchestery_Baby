@@ -1,13 +1,3 @@
-/**
- * TEAM 6:
- * 
- * Anas Saad (2510059)
- * Ahmid Omarzada (2527809)
- * Sayed Hashemi (2508673)
- * Ahmed Youssef (2507690)
- * Usama Bin Fakhar (2530869)
-*/
-
 #ifndef SIMULATOR_HPP
 #define SIMULATOR_HPP
 
@@ -27,12 +17,13 @@ private:
 
     string opcode; // current opcode
     string operand; // current operand (binary memory location)
-    int operandIndex;
+    //int operandIndex;
 
     bool running; // whether simulator is running or not
 
     int btod(const string& binaryString); // converts binary to decimal
     string dtob(int decimalNumber); // converts decimal to binary
+    string trim(const string& str) const; // trims leading and trailing spaces
     vector<string> loadFile(const string& filename); // load machine code from file to store
     bool doesFileExist(const string& filename) const; // checks if file exists
 
